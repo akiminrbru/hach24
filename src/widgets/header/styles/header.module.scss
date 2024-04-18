@@ -1,0 +1,17 @@
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+
+    &_logo {
+        font-size: 36px;
+    }
+
+    &_inner {
+        padding: 16px 0;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+}
