@@ -1,7 +1,7 @@
 "use client";
+import { Panel } from "@/widgets/panel";
 import styles from "./page.module.scss";
 import { useQuery } from "@tanstack/react-query";
-import { useEffect, useState } from "react";
 import { Flex, Typography, Skeleton } from "antd";
 import Cookies from "js-cookie";
 
@@ -16,7 +16,7 @@ type Profile = {
 	role: string;
 };
 
-export default function Profile() {
+export default function Dashboard() {
 	const { isPending, error, data } = useQuery({
 		queryKey: ["profile"],
 		queryFn: () =>
@@ -34,7 +34,7 @@ export default function Profile() {
 			<div className="container">
 				<div className={styles.profile_inner}>
 					<Flex vertical>
-						<Title>Профиль</Title>
+						<Title>Dashboard</Title>
 						{isPending ? (
 							<Skeleton />
 						) : (
@@ -44,6 +44,7 @@ export default function Profile() {
 							</Flex>
 						)}
 					</Flex>
+					<Panel />
 				</div>
 			</div>
 		</main>

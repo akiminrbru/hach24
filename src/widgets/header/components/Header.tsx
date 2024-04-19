@@ -11,11 +11,11 @@ import { CircleUserRound } from "lucide-react";
 export const Header = () => {
 	const isAuth = useUserStore((state) => state.isAuth);
 	const setIsAuth = useUserStore((state) => state.setIsAuth);
-	const router = useRouter();
+	const { push } = useRouter();
 
 	const logout = () => {
 		Cookies.remove("token");
-		router.push("/login");
+		push("/login");
 		setIsAuth(false);
 	};
 
@@ -29,17 +29,17 @@ export const Header = () => {
 					<div className={styles.header_right}>
 						{isAuth ? (
 							<Flex gap="small" align="center">
-								<Link href={"/profile"}>
+								<Link href={"/dashboard"}>
 									<CircleUserRound />
 								</Link>
 								<Button onClick={logout}>Выход</Button>
 							</Flex>
 						) : (
 							<Flex gap="small" align="center">
-								<Link href={"/login"}>
+								<Link href={"/authorization"}>
 									<Button>Вход</Button>
 								</Link>
-								<Link href={"/register"}>
+								<Link href={"/registration"}>
 									<Button>Регистрация</Button>
 								</Link>
 							</Flex>

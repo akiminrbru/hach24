@@ -14,7 +14,7 @@ type FieldType = {
 	password: string;
 };
 
-export default function Register() {
+export default function Registration() {
 	const router = useRouter();
 	const [isError, setIsError] = useState<string>("");
 
@@ -23,7 +23,7 @@ export default function Register() {
 		const data = await getData(values.email, values.password, values.name);
 		console.log(data);
 
-		data.success ? router.push("/login") : setIsError(data.message);
+		data.success ? router.push("/authorization") : setIsError(data.message);
 	};
 
 	const onFinishFailed: FormProps<FieldType>["onFinishFailed"] = (errorInfo) => {

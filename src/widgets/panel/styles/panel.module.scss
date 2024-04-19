@@ -1,0 +1,11 @@
+.panel {
+    display: flex;
+    gap: 24px;
+    justify-content: space-between;
+
+    &_map {
+        border-radius: 8px;
+        border: 2px solid var(--color-gray);
+        overflow: hidden;
+    }
+}

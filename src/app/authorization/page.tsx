@@ -15,7 +15,7 @@ type FieldType = {
 	password: string;
 };
 
-export default function Login() {
+export default function Authorization() {
 	const setToken = useUserStore((state) => state.setToken);
 	const setIsAuth = useUserStore((state) => state.setIsAuth);
 	const router = useRouter();
@@ -26,10 +26,8 @@ export default function Login() {
 		const data = await getData(values.email, values.password);
 		console.log(data);
 
-		data.success ? router.push("/login") : setIsError(data.message);
-
 		if (data.success) {
-			router.push("/profile");
+			router.push("/dashboard");
 			setToken(data.token);
 			setIsAuth(true);
 			Cookies.set("token", data.token, { expires: 1 });

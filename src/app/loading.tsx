@@ -1,6 +1,5 @@
-import { LoadingWrapper } from "@/widgets/loading";
+import { LoadingWrapper } from "@/entities/LoadingWrapper";
 
 export default function Loading() {
-	// You can add any UI inside Loading, including a Skeleton.
 	return <LoadingWrapper />;
 }

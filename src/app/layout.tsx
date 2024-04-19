@@ -30,7 +30,6 @@ export default function RootLayout({
 						</Suspense>
 					</AuthProvider>
 				</QueryProvider>
-				{/* <Loading /> */}
 			</body>
 		</html>
 	);

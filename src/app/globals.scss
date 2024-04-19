@@ -1,5 +1,6 @@
 :root {
   --color-black: #000;
+  --color-gray: rgb(212, 212, 212);
 }
 
 * {
@@ -28,4 +29,8 @@ a {
   color: var(--color-black);
   display: flex;
   align-items: center;
+}
+
+ul {
+  list-style-type: none;
 }

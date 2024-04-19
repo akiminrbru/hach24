@@ -1,8 +1,9 @@
 "use client";
-import React, { Suspense } from "react";
+import React from "react";
 import { useUserStore } from "@/app/model/user";
 import Cookies from "js-cookie";
 import { useQuery } from "@tanstack/react-query";
+import { LoadingWrapper } from "@/entities/LoadingWrapper";
 
 export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
 	const setIsAuth = useUserStore((state) => state.setIsAuth);
@@ -24,5 +25,10 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
 				}),
 	});
 
-	return <>{children}</>;
+	return (
+		<>
+			{isPending && <LoadingWrapper />}
+			{children}
+		</>
+	);
 };

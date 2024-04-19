@@ -1,9 +1,9 @@
 "use client";
 import React from "react";
 import { Flex, Spin } from "antd";
-import styles from "../styles/Loading.module.scss";
+import styles from "../styles/LoadingWrapper.module.scss";
 
-export const Loading = () => {
+export const LoadingWrapper = () => {
 	return (
 		<div className={styles.loading}>
 			<Flex align="center" gap="middle">
