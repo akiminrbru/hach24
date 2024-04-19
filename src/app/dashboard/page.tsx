@@ -35,16 +35,8 @@ export default function Dashboard() {
 				<div className={styles.profile_inner}>
 					<Flex vertical>
 						<Title>Dashboard</Title>
-						{isPending ? (
-							<Skeleton />
-						) : (
-							<Flex vertical>
-								{data?.name && <Text>Имя: {data.name}</Text>}
-								{data?.email && <Text>Email: {data.email}</Text>}
-							</Flex>
-						)}
+						<Panel />
 					</Flex>
-					<Panel />
 				</div>
 			</div>
 		</main>

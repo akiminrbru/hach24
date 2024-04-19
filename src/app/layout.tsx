@@ -6,6 +6,7 @@ import { QueryProvider } from "./QueryProvider";
 import { AuthProvider } from "./AuthProvider";
 import Loading from "./loading";
 import { Suspense } from "react";
+import { Footer } from "@/widgets/footer";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -27,6 +28,7 @@ export default function RootLayout({
 						<Suspense fallback={<Loading />}>
 							<Header />
 							{children}
+							<Footer />
 						</Suspense>
 					</AuthProvider>
 				</QueryProvider>

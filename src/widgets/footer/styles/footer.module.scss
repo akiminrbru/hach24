@@ -1,0 +1,13 @@
+.footer {
+    position: sticky;
+    top: 100%;
+    background-color: var(--color-blue);
+
+    &_inner {
+        display: flex;
+        justify-content: center;
+        padding: 8px 0;
+        color: var(--color-white);
+        font-size: 12px;
+    }
+}

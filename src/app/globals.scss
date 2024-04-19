@@ -1,6 +1,8 @@
 :root {
   --color-black: #000;
   --color-gray: rgb(212, 212, 212);
+  --color-blue: #69b1ff;
+  --color-white: #fff;
 }
 
 * {
@@ -15,6 +17,7 @@ body {
   display: flex;
   flex-direction: column;
   padding-top: 76px;
+  background-color: var(--color-white);
 }
 
 .container {

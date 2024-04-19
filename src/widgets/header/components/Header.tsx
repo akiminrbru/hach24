@@ -6,7 +6,7 @@ import { useUserStore } from "@/app/model/user";
 import { Flex, Button } from "antd";
 import Cookies from "js-cookie";
 import { useRouter } from "next/navigation";
-import { CircleUserRound } from "lucide-react";
+import { LayoutDashboard } from "lucide-react";
 
 export const Header = () => {
 	const isAuth = useUserStore((state) => state.isAuth);
@@ -15,7 +15,7 @@ export const Header = () => {
 
 	const logout = () => {
 		Cookies.remove("token");
-		push("/login");
+		push("/authorization");
 		setIsAuth(false);
 	};
 
@@ -24,13 +24,13 @@ export const Header = () => {
 			<div className="container">
 				<div className={styles.header_inner}>
 					<Link className={styles.header_logo} href={"/"}>
-						Logo
+						<span>Dark</span>Logist
 					</Link>
 					<div className={styles.header_right}>
 						{isAuth ? (
 							<Flex gap="small" align="center">
 								<Link href={"/dashboard"}>
-									<CircleUserRound />
+									<LayoutDashboard />
 								</Link>
 								<Button onClick={logout}>Выход</Button>
 							</Flex>

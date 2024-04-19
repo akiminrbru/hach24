@@ -5,7 +5,11 @@
     right: 0;
 
     &_logo {
-        font-size: 36px;
+        font-size: 30px;
+
+        span {
+            color: var(--color-blue);
+        }
     }
 
     &_inner {
