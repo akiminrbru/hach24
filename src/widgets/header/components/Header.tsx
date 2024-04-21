@@ -11,6 +11,7 @@ import { LayoutDashboard } from "lucide-react";
 export const Header = () => {
 	const isAuth = useUserStore((state) => state.isAuth);
 	const setIsAuth = useUserStore((state) => state.setIsAuth);
+	const email = useUserStore((state) => state.email);
 	const { push } = useRouter();
 
 	const logout = () => {
@@ -23,15 +24,13 @@ export const Header = () => {
 		<header className={styles.header}>
 			<div className="container">
 				<div className={styles.header_inner}>
-					<Link className={styles.header_logo} href={"/"}>
-						<span>Dark</span>Logist
-					</Link>
+					<span className={styles.header_logo}>
+						<span>Axenix</span>Логистик
+					</span>
 					<div className={styles.header_right}>
 						{isAuth ? (
 							<Flex gap="small" align="center">
-								<Link href={"/dashboard"}>
-									<LayoutDashboard />
-								</Link>
+								{email && <span className={styles.header_email}>{email}</span>}
 								<Button onClick={logout}>Выход</Button>
 							</Flex>
 						) : (

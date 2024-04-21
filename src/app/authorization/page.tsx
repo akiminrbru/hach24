@@ -67,7 +67,7 @@ export default function Authorization() {
 					<Form.Item<FieldType> label="Пароль" name="password" rules={[{ required: true, message: "Введите пароль!" }]}>
 						<Input.Password />
 					</Form.Item>
-					{isError && <span>{isError}</span>}
+					{isError && <span className={styles.main_error}>{isError}</span>}
 					<Form.Item wrapperCol={{ offset: 8, span: 16 }}>
 						<Button type="primary" htmlType="submit">
 							Войти

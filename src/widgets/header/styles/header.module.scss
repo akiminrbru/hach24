@@ -3,12 +3,18 @@
     top: 0;
     left: 0;
     right: 0;
+    background-color: var(--color-gray);
 
     &_logo {
         font-size: 30px;
+        font-weight: 300;
+        display: flex;
+        align-items: center;
+        gap: 5px;
 
         span {
-            color: var(--color-blue);
+            color: var(--color-orange);
+            font-weight: 500;
         }
     }
 
@@ -17,5 +23,14 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
+    }
+
+    @media screen and (max-width: 576px) {
+        &_logo {
+            font-size: 18px;
+        }
+        &_email {
+            display: none;
+        }
     }
 }

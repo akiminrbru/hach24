@@ -31,20 +31,25 @@ export default function Registration() {
 	};
 
 	const getData = async (email: string, password: string, name: string) => {
-		return await fetch("https://dev.darksecrets.ru/api/auth/reg", {
-			method: "post",
-			headers: {
-				Accept: "application/json",
-				"Content-Type": "application/json",
-			},
-			body: JSON.stringify({
-				email: email,
-				password: password,
-				name: name,
-			}),
-		})
-			.then((response) => response.json())
-			.then((data) => data);
+		try {
+			return await fetch("https://dev.darksecrets.ru/api/auth/reg", {
+				method: "post",
+				headers: {
+					Accept: "application/json",
+					"Content-Type": "application/json",
+				},
+				body: JSON.stringify({
+					email: email,
+					password: password,
+					name: name,
+				}),
+			})
+				.then((response) => response.json())
+				.then((data) => data)
+				.catch((err) => console.log(err));
+		} catch (e) {
+			console.log(e);
+		}
 	};
 
 	return (
@@ -61,7 +66,7 @@ export default function Registration() {
 					<Form.Item<FieldType> label="Пароль" name="password" rules={[{ required: true, message: "Введите пароль!" }]}>
 						<Input.Password />
 					</Form.Item>
-					{isError && <span>{isError}</span>}
+					{isError && <span className={styles.main_error}>{isError}</span>}
 					<Form.Item wrapperCol={{ offset: 8, span: 16 }}>
 						<Button type="primary" htmlType="submit">
 							Войти

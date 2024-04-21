@@ -2,5 +2,13 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: calc(100dvh - 76px);
+    height: calc(100dvh - 107px);
+    overflow: hidden;
+
+    &_error {
+        display: flex;
+        justify-content: center;
+        color: red;
+        margin-bottom: 24px;
+    }
 }

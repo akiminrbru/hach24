@@ -1,5 +1,9 @@
-import styles from "./page.module.scss";
+"use client";
+
+import { useRouter } from "next/navigation";
 
 export default function Home() {
-	return <main className={styles.main}></main>;
+	const { push } = useRouter();
+	push("/dashboard");
+	return <main></main>;
 }

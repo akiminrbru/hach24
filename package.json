@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@ant-design/charts": "^2.1.0",
     "@pbe/react-yandex-maps": "^1.2.5",
     "@tanstack/react-query": "^5.29.2",
     "@types/js-cookie": "^3.0.6",
@@ -19,6 +20,7 @@
     "react": "^18",
     "react-cookie": "^7.1.4",
     "react-dom": "^18",
+    "react-highlight-words": "^0.20.0",
     "sass": "^1.75.0",
     "zustand": "^4.5.2"
   },
@@ -26,6 +28,7 @@
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
+    "@types/react-highlight-words": "^0.16.7",
     "typescript": "^5"
   }
 }

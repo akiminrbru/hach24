@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Nunito } from "next/font/google";
 import "./globals.scss";
 import { Header } from "@/widgets/header";
 import { QueryProvider } from "./QueryProvider";
@@ -8,7 +8,7 @@ import Loading from "./loading";
 import { Suspense } from "react";
 import { Footer } from "@/widgets/footer";
 
-const inter = Inter({ subsets: ["latin"] });
+const nunito = Nunito({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
 	title: "Hack",
@@ -22,7 +22,7 @@ export default function RootLayout({
 }>) {
 	return (
 		<html lang="en">
-			<body className={inter.className}>
+			<body className={nunito.className}>
 				<QueryProvider>
 					<AuthProvider>
 						<Suspense fallback={<Loading />}>

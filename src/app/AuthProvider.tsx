@@ -7,6 +7,7 @@ import { LoadingWrapper } from "@/entities/LoadingWrapper";
 
 export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
 	const setIsAuth = useUserStore((state) => state.setIsAuth);
+	const setEmail = useUserStore((state) => state.setEmail);
 
 	const { isPending, error, data } = useQuery({
 		queryKey: ["userCheck"],
@@ -21,6 +22,21 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
 				.then((data) => {
 					console.log(data);
 					data.success ? setIsAuth(true) : setIsAuth(false);
+					return data;
+				}),
+	});
+
+	const profileData = useQuery({
+		queryKey: ["profile"],
+		queryFn: () =>
+			fetch("https://dev.darksecrets.ru/api/user/profile", {
+				headers: {
+					Authorization: `${Cookies.get("token")}`,
+				},
+			})
+				.then((res) => res.json())
+				.then((data) => {
+					data.success && setEmail(data?.item?.email);
 					return data;
 				}),
 	});
