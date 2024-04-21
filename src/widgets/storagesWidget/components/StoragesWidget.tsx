@@ -7,6 +7,7 @@ import type { FilterDropdownProps } from "antd/es/table/interface";
 import { useQuery } from "@tanstack/react-query";
 import Cookies from "js-cookie";
 import Highlighter from "react-highlight-words";
+import Link from "next/link";
 
 interface DataType {
 	key: React.Key;
@@ -87,6 +88,7 @@ export const StoragesWidget = () => {
 		{
 			title: "id",
 			dataIndex: "id",
+			render: (id) => <Link href={`/dashboard/storages/${id}`}>{id}</Link>,
 		},
 		{
 			title: "Название",

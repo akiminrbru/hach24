@@ -21,8 +21,6 @@ export default function Layout({
 						<Link className={`${pathname == "/dashboard/map" && styles.linkActive}`} href="/dashboard/map">
 							Карта
 						</Link>
-						<Link href="#">Поставки</Link>
-						<Link href="#">Статистика</Link>
 						<Link className={`${pathname == "/dashboard/products" && styles.linkActive}`} href="/dashboard/products">
 							Товары
 						</Link>

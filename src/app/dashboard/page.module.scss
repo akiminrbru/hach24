@@ -55,3 +55,22 @@
 .linkActive {
     color: var(--color-orange);
 }
+
+.dash {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    padding-top: 60px;
+
+    &_item {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        h5 {
+            font-size: 18px;
+        }
+
+        span {
+            font-size: 24px;
+        }
+    }
+}

@@ -1,5 +1,5 @@
 "use client";
-import { ProductsWidget } from "@/widgets/productsWidget";
+import { ProductsWidget, ProductsWidget2 } from "@/widgets/productsWidget";
 import { Flex } from "antd";
 import { useParams } from "next/navigation";
 import React from "react";
@@ -19,10 +19,10 @@ const StoragesDetail = () => {
 				<Link className={styles.storagesDetail_link} href="/dashboard/storages">
 					<ArrowLeftFromLine /> Все склады
 				</Link>
-				<Title level={3}>Склад №{params.storagesId}</Title>
+				<Title level={3}>Объект №{params.storagesId}</Title>
 			</Flex>
 			<Title level={5}>Товары склада:</Title>
-			<ProductsWidget storeId={params.storagesId} />
+			<ProductsWidget2 storeId={params.storagesId} />
 		</Flex>
 	);
 };
